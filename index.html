@@ -12,7 +12,6 @@
       times.reduce(
         function (prev, curr, i, a) {
           nap_time_m = in_minutes(curr[0], curr[1]);
-          console.log(nap_time_m);
           return prev || (nap_time_m < m && nap_time_m + 20 > m);
       }, false) ? "YES" : "NO"
     );
