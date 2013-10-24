@@ -1,0 +1,21 @@
+<html>
+  <h1 style="width:100%; height: 100%; text-align: center; font-size:30em;">
+  <script>
+    function in_minutes(hours, minutes) { return hours * 60 + minutes; }
+
+    times = [[2, 0], [5, 0], [8, 0], [11, 0], [14, 0], [17, 0], [20, 0], [23, 0]];
+    duration = 20;
+    d = new Date;
+    m = in_minutes(d.getHours(), d.getMinutes());
+
+    document.write(
+      times.reduce(
+        function (prev, curr, i, a) {
+          nap_time_m = in_minutes(curr[0], curr[1]);
+          console.log(nap_time_m);
+          return prev || (nap_time_m < m && nap_time_m + 20 > m);
+      }, false) ? "YES" : "NO"
+    );
+  </script>
+  </h1>
+</html>
